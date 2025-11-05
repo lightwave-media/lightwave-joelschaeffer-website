@@ -12,6 +12,10 @@ import React from 'react'
 import type { Page } from '@/payload-types'
 import { notFound } from 'next/navigation'
 
+// Force dynamic rendering to allow build without database
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+
 export async function generateStaticParams() {
   try {
     const payload = await getPayload({ config: configPromise })
