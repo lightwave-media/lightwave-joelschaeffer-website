@@ -12,6 +12,12 @@ import { GeistMono } from 'geist/font/mono'
 import React from 'react'
 import './globals.css'
 
+// Force all pages in this layout to use dynamic rendering
+// This prevents Next.js from trying to statically generate pages at build time
+// which would require database access before Payload CMS has initialized the schema
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+
 /* const { SITE_NAME, TWITTER_CREATOR, TWITTER_SITE } = process.env
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
