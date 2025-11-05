@@ -17,6 +17,12 @@
       "service": "lightwave-joelschaeffer-website"
     }
   ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "joelschaeffer-next-cache"
+    }
+  ],
   "vars": {
     "NODE_ENV": "production"
   }
