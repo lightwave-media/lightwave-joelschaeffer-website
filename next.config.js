@@ -1,6 +1,10 @@
 import { withPayload } from '@payloadcms/next/withPayload'
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare"
 
 import redirects from './redirects.js'
+
+// Initialize OpenNext for Cloudflare Workers
+initOpenNextCloudflareForDev()
 
 const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 

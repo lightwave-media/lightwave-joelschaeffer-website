@@ -8,6 +8,10 @@
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "ii": "cross-env NODE_OPTIONS=--no-deprecation pnpm --ignore-workspace install",
@@ -70,6 +74,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@next/eslint-plugin-next": "^15.5.4",
+    "@opennextjs/cloudflare": "^1.11.0",
     "@playwright/test": "1.50.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/postcss": "4.0.12",
@@ -96,7 +101,8 @@
     "tailwindcss": "^4.0.12",
     "typescript": "5.7.2",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.2.3"
+    "vitest": "3.2.3",
+    "wrangler": "^4.45.4"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"

@@ -14,6 +14,7 @@ playwright-report/index.html
 # next.js
 /.next/
 /out/
+/.open-next/
 
 # production
 /build
@@ -31,6 +32,7 @@ yarn-error.log*
 # local env files
 .env*
 !.env.example
+.dev.vars
 
 # vercel
 .vercel
