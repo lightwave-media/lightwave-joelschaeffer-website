@@ -24,6 +24,8 @@ const nextConfig = {
   },
   reactStrictMode: true,
   redirects,
+  // Prevent bundling of Payload's PostgreSQL adapter for Cloudflare Workers compatibility
+  serverExternalPackages: ['@payloadcms/db-postgres', 'jose', 'pg', 'pg-native'],
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
